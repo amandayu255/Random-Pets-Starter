@@ -5,15 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-
-class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    val petImage: ImageView
-
-    init {
-        // Find our RecyclerView item's ImageView for future use
-        petImage = view.findViewById(R.id.pet_image)
-    }
-}
+import com.bumptech.glide.Glide
 
 class PetAdapter (private val petList: List<String>) : RecyclerView.Adapter<PetAdapter.ViewHolder>() {
 
@@ -35,8 +27,20 @@ class PetAdapter (private val petList: List<String>) : RecyclerView.Adapter<PetA
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        Glide.with(holder.itemView)
+            .load(petList[position])
+            .centerCrop()
+            .into(holder.petImage)
     }
 
     override fun getItemCount() = petList.size
+}
+
+class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    val petImage: ImageView
+
+    init {
+        // Find our RecyclerView item's ImageView for future use
+        petImage = view.findViewById(R.id.pet_image)
+    }
 }
