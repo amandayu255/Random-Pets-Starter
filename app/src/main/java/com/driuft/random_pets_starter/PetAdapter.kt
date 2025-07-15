@@ -1,5 +1,6 @@
 package com.driuft.random_pets_starter
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
