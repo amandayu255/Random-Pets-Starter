@@ -39,6 +39,9 @@ class MainActivity : AppCompatActivity() {
                 val adapter = PetAdapter(petList)
                 rvPets.adapter = adapter
                 rvPets.layoutManager = LinearLayoutManager(this@MainActivity)
+
+                rvPets.addItemDecoration(DividerItemDecoration(this@MainActivity, LinearLayoutManager.VERTICAL))
+
             }
 
             override fun onFailure(
