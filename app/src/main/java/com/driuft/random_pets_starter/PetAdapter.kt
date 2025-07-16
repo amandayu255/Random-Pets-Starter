@@ -39,12 +39,3 @@ class PetAdapter (private val petList: List<String>) : RecyclerView.Adapter<PetA
 
     override fun getItemCount() = petList.size
 }
-
-class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    val petImage: ImageView
-
-    init {
-        // Find our RecyclerView item's ImageView for future use
-        petImage = view.findViewById(R.id.pet_image)
-    }
-}
